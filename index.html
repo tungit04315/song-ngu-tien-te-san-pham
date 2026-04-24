@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Fashion | E-commerce & Admin</title>
-    <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20250301/ourmid/pngtree-supermarket-logo-shopping-vector-png-image_15680148.png" type="image/x-icon">
+        <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20250301/ourmid/pngtree-supermarket-logo-shopping-vector-png-image_15680148.png" type="image/x-icon">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,7 +156,7 @@
         tbody tr:hover { background: var(--color-gray-50); }
 
         /* Variant Builder */
-        .variant-row { display: grid; grid-template-columns: 1fr 1fr 1.5fr 1fr auto; gap: 12px; align-items: end; margin-bottom: 16px; padding: 16px; background: var(--color-gray-50); border-radius: var(--radius-md); border: 1px dashed var(--color-gray-300); }
+        .variant-row { display: grid; grid-template-columns: 1fr 1fr 1.5fr 1.5fr 1fr auto; gap: 12px; align-items: end; margin-bottom: 16px; padding: 16px; background: var(--color-gray-50); border-radius: var(--radius-md); border: 1px dashed var(--color-gray-300); }
         
         /* Admin Product List */
         .admin-product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
@@ -419,12 +420,16 @@
                                 <label class="form-label">Tên Sản Phẩm (Tiếng Anh)</label>
                                 <input type="text" id="prod-name-en" class="form-control" required placeholder="Premium Silk Dress...">
                             </div>
-                            <div class="grid-2" style="gap: 15px;">
-                                <div class="form-group">
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <div class="form-group" style="flex: 1; min-width: 120px;">
                                     <label class="form-label">Giá Gốc (VNĐ)</label>
                                     <input type="number" id="prod-price" class="form-control" required min="0" placeholder="1000000">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="flex: 1; min-width: 120px;">
+                                    <label class="form-label">Giá Gốc (USD)</label>
+                                    <input type="number" id="prod-price-usd" class="form-control" required min="0" step="0.01" placeholder="40.00">
+                                </div>
+                                <div class="form-group" style="flex: 2; min-width: 200px;">
                                     <label class="form-label">URL Ảnh (Unsplash Demo)</label>
                                     <input type="url" id="prod-img" class="form-control" required placeholder="https://images.unsplash.com/...">
                                 </div>
@@ -605,13 +610,14 @@
                 nameVi: 'Váy Lụa Champagne Cao Cấp',
                 nameEn: 'Premium Champagne Silk Dress',
                 basePrice: 2500000,
+                basePriceUsd: 100,
                 img: 'https://lamia.com.vn/storage/vay-lua-1.jpg',
                 descVi: 'Thiết kế váy lụa tinh tế với tone màu champagne sang trọng. Chất liệu lụa tơ tằm mềm mại, ôm dáng, tôn vinh vẻ đẹp quyến rũ của phái nữ. Phù hợp cho các buổi dạ tiệc.',
                 descEn: 'Exquisite silk dress design in an elegant champagne tone. Soft, form-fitting silk material that enhances the alluring beauty of women. Perfect for evening parties.',
                 variants: [
-                    { id: 'v1', sizeId: 's1', color: '#D4AF37', price: 2500000, stock: 10 },
-                    { id: 'v2', sizeId: 's2', color: '#D4AF37', price: 2500000, stock: 5 },
-                    { id: 'v3', sizeId: 's1', color: '#111111', price: 2500000, stock: 8 } // Black option
+                    { id: 'v1', sizeId: 's1', color: '#D4AF37', price: 2500000, priceUsd: 100, stock: 10 },
+                    { id: 'v2', sizeId: 's2', color: '#D4AF37', price: 2500000, priceUsd: 100, stock: 5 },
+                    { id: 'v3', sizeId: 's1', color: '#111111', price: 2500000, priceUsd: 100, stock: 8 } // Black option
                 ]
             },
             {
@@ -619,13 +625,14 @@
                 nameVi: 'Áo Khoác Nam Thanh Lịch',
                 nameEn: 'Elegant Men Coat',
                 basePrice: 3200000,
-                img: 'https://laforce.vn/wp-content/uploads/2022/09/cac-thuong-hieu-ao-khoac-nam-dep.jpg',
+                basePriceUsd: 128,
+                 img: 'https://laforce.vn/wp-content/uploads/2022/09/cac-thuong-hieu-ao-khoac-nam-dep.jpg',
                 descVi: 'Áo khoác dáng dài mang phong cách minimalism hiện đại. Form chuẩn, đường may sắc sảo. Lựa chọn hoàn hảo cho quý ông thành đạt trong mùa đông năm nay.',
                 descEn: 'Long coat featuring modern minimalism style. Standard form, sharp stitching. The perfect choice for successful gentlemen this winter.',
                 variants: [
-                    { id: 'v4', sizeId: 's2', color: '#111111', price: 3200000, stock: 15 },
-                    { id: 'v5', sizeId: 's3', color: '#111111', price: 3200000, stock: 20 },
-                    { id: 'v6', sizeId: 's4', color: '#111111', price: 3300000, stock: 5 }
+                    { id: 'v4', sizeId: 's2', color: '#111111', price: 3200000, priceUsd: 128, stock: 15 },
+                    { id: 'v5', sizeId: 's3', color: '#111111', price: 3200000, priceUsd: 128, stock: 20 },
+                    { id: 'v6', sizeId: 's4', color: '#111111', price: 3300000, priceUsd: 132, stock: 5 }
                 ]
             },
             {
@@ -633,11 +640,12 @@
                 nameVi: 'Túi Xách Da Đỏ Thời Trang',
                 nameEn: 'Fashion Red Leather Bag',
                 basePrice: 1850000,
+                basePriceUsd: 74,
                 img: 'https://kat.vn/wp-content/uploads/2025/01/thuong-hieu-tui-xach-nu-30.jpeg',
                 descVi: 'Điểm nhấn rực rỡ cho set đồ của bạn. Túi xách da thật cao cấp với tone đỏ quyền lực. Thiết kế tối giản nhưng toát lên vẻ sang trọng, có dây đeo chéo tiện lợi.',
                 descEn: 'A brilliant accent for your outfit. Premium genuine leather bag in power red tone. Minimalist design that exudes luxury, featuring a convenient crossbody strap.',
                 variants: [
-                    { id: 'v7', sizeId: 's2', color: '#E63946', price: 1850000, stock: 30 }
+                    { id: 'v7', sizeId: 's2', color: '#E63946', price: 1850000, priceUsd: 74, stock: 30 }
                 ]
             }
         ];
@@ -691,10 +699,10 @@
         const generateId = () => '_' + Math.random().toString(36).substr(2, 9);
 
         // Utility: Format Currency
-        const formatPrice = (vndPrice) => {
+        const formatPrice = (vndPrice, usdPrice) => {
             if (appState.currency === 'USD') {
-                const usd = vndPrice / DEMO_EXCHANGE_RATE;
-                return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(usd);
+                const finalUsd = usdPrice !== undefined && usdPrice !== null && !isNaN(usdPrice) ? usdPrice : (vndPrice / DEMO_EXCHANGE_RATE);
+                return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(finalUsd);
             }
             return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(vndPrice);
         };
@@ -808,7 +816,11 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Giá (VNĐ)</label>
-                        <input type="number" class="form-control var-price" required min="0" placeholder="Riêng cho biến thể">
+                        <input type="number" class="form-control var-price" required min="0" placeholder="Giá VNĐ">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Giá (USD)</label>
+                        <input type="number" class="form-control var-price-usd" required min="0" step="0.01" placeholder="Ví dụ: 40">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Tồn Kho</label>
@@ -863,6 +875,7 @@
                     sizeId: sizeId,
                     color: row.querySelector('.var-color').value,
                     price: parseFloat(row.querySelector('.var-price').value),
+                    priceUsd: parseFloat(row.querySelector('.var-price-usd').value),
                     stock: parseInt(row.querySelector('.var-stock').value)
                 });
             });
@@ -877,6 +890,7 @@
                 nameVi: document.getElementById('prod-name-vi').value.trim(),
                 nameEn: document.getElementById('prod-name-en').value.trim(),
                 basePrice: parseFloat(document.getElementById('prod-price').value),
+                basePriceUsd: parseFloat(document.getElementById('prod-price-usd').value),
                 img: document.getElementById('prod-img').value.trim(),
                 descVi: document.getElementById('prod-desc-vi').value.trim(),
                 descEn: document.getElementById('prod-desc-en').value.trim(),
@@ -909,7 +923,7 @@
                     <div class="admin-product-info">
                         <h4>${p.nameVi}</h4>
                         <p>${p.nameEn}</p>
-                        <p style="margin-top: 5px; font-weight: bold;">${formatPrice(p.basePrice)}</p>
+                        <p style="margin-top: 5px; font-weight: bold;">${formatPrice(p.basePrice, p.basePriceUsd)}</p>
                         <p><span style="background: #f4f4f5; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">${p.variants.length} Variants</span></p>
                     </div>
                     <button class="btn btn-icon btn-danger" onclick="deleteProduct('${p.id}')" style="align-self: center;"><i class="fa-solid fa-trash"></i></button>
@@ -956,7 +970,7 @@
             
             appState.products.forEach(p => {
                 const name = appState.lang === 'VI' ? p.nameVi : p.nameEn;
-                const priceStr = formatPrice(p.basePrice);
+                const priceStr = formatPrice(p.basePrice, p.basePriceUsd);
                 const btnText1 = translations[appState.lang].view_detail;
                 
                 const card = document.createElement('div');
@@ -1111,8 +1125,9 @@
                 currentVariant = p.variants.find(v => v.color === appState.selectedModalColor && v.sizeId === appState.selectedModalSize);
             }
 
-            const price = currentVariant ? currentVariant.price : p.basePrice;
-            priceEl.innerText = formatPrice(price);
+            const priceVnd = currentVariant ? currentVariant.price : p.basePrice;
+            const priceUsd = currentVariant ? currentVariant.priceUsd : p.basePriceUsd;
+            priceEl.innerText = formatPrice(priceVnd, priceUsd);
 
             if(currentVariant) {
                 stockEl.innerText = `${translations[appState.lang].stock_avail} ${currentVariant.stock}`;
@@ -1215,11 +1230,12 @@
             
             if(appState.cart.length === 0) {
                 container.innerHTML = `<div class="empty-cart-msg">${translations[appState.lang].empty_cart}</div>`;
-                document.getElementById('cart-subtotal-price').innerText = formatPrice(0);
+                document.getElementById('cart-subtotal-price').innerText = formatPrice(0, 0);
                 return;
             }
 
-            let subtotal = 0;
+            let subtotalVnd = 0;
+            let subtotalUsd = 0;
 
             appState.cart.forEach(item => {
                 const product = appState.products.find(p => p.id === item.productId);
@@ -1231,9 +1247,11 @@
                 const size = appState.sizes.find(s => s.id === variant.sizeId);
                 const sizeName = size ? (appState.lang === 'VI' ? size.nameVi : size.nameEn) : '';
                 const prodName = appState.lang === 'VI' ? product.nameVi : product.nameEn;
-                const price = variant.price;
+                const priceVnd = variant.price;
+                const priceUsd = variant.priceUsd !== undefined ? variant.priceUsd : (variant.price / DEMO_EXCHANGE_RATE);
                 
-                subtotal += (price * item.qty);
+                subtotalVnd += (priceVnd * item.qty);
+                subtotalUsd += (priceUsd * item.qty);
 
                 const div = document.createElement('div');
                 div.className = 'cart-item';
@@ -1246,7 +1264,7 @@
                             Size: ${sizeName} | Qty: ${item.qty}
                         </div>
                         <div class="cart-item-bottom">
-                            <span class="cart-item-price">${formatPrice(price * item.qty)}</span>
+                            <span class="cart-item-price">${formatPrice(priceVnd * item.qty, priceUsd * item.qty)}</span>
                             <span class="cart-item-remove" onclick="removeFromCart('${item.id}')"><i class="fa-solid fa-trash-can"></i> Xoá</span>
                         </div>
                     </div>
@@ -1254,7 +1272,7 @@
                 container.appendChild(div);
             });
 
-            document.getElementById('cart-subtotal-price').innerText = formatPrice(subtotal);
+            document.getElementById('cart-subtotal-price').innerText = formatPrice(subtotalVnd, subtotalUsd);
         };
 
         window.removeFromCart = (cartItemId) => {
